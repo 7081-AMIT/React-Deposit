@@ -53,6 +53,7 @@ const Regis = () => {
     </View>
   );
 };
+// comment
 
 export default Regis;
 
