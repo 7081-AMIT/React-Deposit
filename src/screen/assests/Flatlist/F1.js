@@ -7,11 +7,13 @@ import {
   SafeAreaView,
   StatusBar,
   
-  id,TextInput,Dimensions
+  id,TextInput,Dimensions,
+  ScrollView,
+  TouchableOpacity
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-const F1 = () => {
+const F1 = ({navigation}) => {
   const Flatt = [
     {
       name: 'Amit',
@@ -71,6 +73,8 @@ const F1 = () => {
       },
   ];
   return (
+    <SafeAreaView>
+      <ScrollView> 
     <View style={styles.a1}>
           <StatusBar backgroundColor="blue" barStyle="light-content" />
       <Text
@@ -122,7 +126,21 @@ const F1 = () => {
           }}
         />
       </View>
+      <TouchableOpacity onPress ={() =>navigation.navigate("Insta") }>
+        <Text
+          style={{
+            color: 'white',
+            fontSize: 28,
+            fontWeight: 'bold',
+            alignSelf: 'center',margin:20
+          }}>
+          Submit
+        </Text>
+      </TouchableOpacity>
+      
     </View>
+    </ScrollView>
+    </SafeAreaView>
   );
 };
 

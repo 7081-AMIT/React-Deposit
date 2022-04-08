@@ -8,7 +8,7 @@ import { StyleSheet,
     id,TextInput,Dimensions } from 'react-native'
     const {width, height} = Dimensions.get('window');
 
-const F12 = () => {
+const F12 = ({navigation}) => {
     const FlatList1 =[
         {
             name:"Amit",

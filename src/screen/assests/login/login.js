@@ -8,10 +8,11 @@ import {
   StyleSheet,
   Button,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 
 const {width, height} = Dimensions.get('window');
-const Login = () => {
+const Login3 = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -68,14 +69,16 @@ const Login = () => {
           <View style={styles.btn}>
 
             
-            <Button      style={styles.btn} title="SUBMIT"></Button>
+           <TouchableOpacity onPress ={() =>navigation.navigate("Detail") }>
+             <Text style={styles.btn}>Submit</Text>
+           </TouchableOpacity>
           </View>
         </View>
       </View>
     </SafeAreaView>
   );
 };
-export default Login;
+export default Login3;
 const styles = StyleSheet.create({
   login: {
     //backgroundColor:'green',

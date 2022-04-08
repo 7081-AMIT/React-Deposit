@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-const Loginn = () => {
+const Loginn = ({navigation}) => {
   return (
    
     <View style={{backgroundColor:'#3c1361'}}>

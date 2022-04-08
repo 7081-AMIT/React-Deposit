@@ -7,11 +7,15 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  SafeAreaView,
+  ScrollView
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-const Register = () => {
+const Register = ({navigation}) => {
   return (
+    <SafeAreaView> 
+       <ScrollView>
     <View style={styles.container}>
       <View
         style={{
@@ -95,7 +99,7 @@ const Register = () => {
         </View>
       </View>
       <View style={styles.btn}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress ={() =>navigation.navigate("Home") }>
           <Text
             style={{
               fontWeight: 'bold',
@@ -108,6 +112,8 @@ const Register = () => {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
+    </SafeAreaView>
   );
 };
 

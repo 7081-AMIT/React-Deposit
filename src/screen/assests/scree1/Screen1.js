@@ -11,7 +11,7 @@ import {
 
 const {width, height} = Dimensions.get('window');
 
-const Screen1 = () => {
+const Screen1 = ({navigation}) => {
   const FLS = [
     {
       name: 'Apple',

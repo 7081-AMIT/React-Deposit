@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-const Responsive = () => {
+const Responsive = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.maincontainer}>

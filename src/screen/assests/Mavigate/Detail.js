@@ -7,11 +7,15 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  SafeAreaView,
+  ScrollView
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-const Detail = () => {
+const Detail = ({navigation}) => {
   return (
+    <SafeAreaView> 
+      <ScrollView>
     <View style={styles.container}>
       <View
         style={{
@@ -28,11 +32,11 @@ const Detail = () => {
         <Image
           style={styles.image}
           source={require('/Users/administrator/Desktop/A420/src/screen/assests/image/crown.png')}></Image>
-        <Text style={{margin: 15,color:'white'}}>━━━━</Text>
+        <Text style={{margin: 15,color:'white'}}>_________</Text>
         <Image
           style={styles.image}
           source={require('/Users/administrator/Desktop/A420/src/screen/assests/image/2.png')}></Image>
-        <Text style={{margin: 15,color:'white'}}>━━━━</Text>
+        <Text style={{margin: 15,color:'white'}}>_________</Text>
         <Image
           style={styles.image}
           source={require('/Users/administrator/Desktop/A420/src/screen/assests/image/3.png')}></Image>
@@ -51,7 +55,7 @@ const Detail = () => {
         </View>
       </View> */}
 
-<View style={styles.mainview1}>
+<View style={styles.mainview2}>
         <View style={{flexDirection: 'row'}}>
           <TextInput
             placeholder=""
@@ -101,7 +105,7 @@ const Detail = () => {
         </View>
       </View>
       <View style={styles.btn}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress ={() =>navigation.navigate("Register") }>
           <Text
             style={{
               fontWeight: 'bold',
@@ -114,6 +118,8 @@ const Detail = () => {
         </TouchableOpacity>
       </View>
     </View>
+     </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -195,4 +201,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#A32EFF',
     margin: 5,
   },
+  mainview2: {
+    borderRadius: 20,
+    height: 70,
+    width: width / 1.05,
+    backgroundColor: 'white',
+    margin: 5,
+  },
+
 });

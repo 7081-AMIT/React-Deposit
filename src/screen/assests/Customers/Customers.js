@@ -12,7 +12,8 @@ import {
   Image,
   TouchableOpacity,
   Modal,
-  Alert,Pressable
+  Alert,
+  Pressable,
 } from 'react-native';
 
 const {width} = Dimensions.get('window');
@@ -37,20 +38,19 @@ const DATA = [
 ];
 
 const Item = ({title}) => (
-    
   <View style={styles.item}>
-   
     <Text style={styles.title}>{title}</Text>
     <Text style={styles.id}>{id}</Text>
   </View>
 );
 
-const Customers = () => {
-    const [modalVisible, setModalVisible] = useState(false);
+const Customers = ({navigation}) => {
+  const [modalVisible, setModalVisible] = useState(false);
   const renderItem = ({item}) => <Item title={item.title} />;
 
   return (
     <SafeAreaView style={styles.container}>
+      
       <View>
         <Text
           style={{
@@ -73,7 +73,7 @@ const Customers = () => {
       />
       <TouchableOpacity>
         <Modal
-         animationType="slide"
+          animationType="slide"
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => {
@@ -94,21 +94,35 @@ const Customers = () => {
         <Pressable
           style={[styles.button, styles.buttonOpen]}
           onPress={() => setModalVisible(true)}>
-            <Text style={{
-                backgroundColor: 'green',
+          <Text
+            style={{
+              backgroundColor: 'green',
               borderRadius: 20,
-              padding:5,
-              
+              padding: 5,
+
               //width: 120,
               height: 30,
               alignSelf: 'center',
               textAlign: 'center',
               fontWeight: 'bold',
               //color:'green',
-              fontSize: 20,}}>Click Me</Text>
-          </Pressable>
-          </TouchableOpacity>
-     
+              fontSize: 20,
+            }}>
+            Click Me
+          </Text>
+        </Pressable>
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>navigation.navigate("Facebook") }>
+        <Text
+          style={{
+            color: 'red',
+            fontSize: 28,
+            fontWeight: 'bold',
+            alignSelf: 'center',margin:20
+          }}>
+          Submit
+        </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -145,38 +159,38 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
-  centerView:{
-    flex:0.2,
-    justifyContent:'center',
-    alignSelf:'center',
+  centerView: {
+    flex: 0.2,
+    justifyContent: 'center',
+    alignSelf: 'center',
     //marginTop:40,
-    backgroundColor:'green',
-    borderRadius:10,
-   // height:100,
-    paddingBottom:0,
-    
-    width:150,
+    backgroundColor: 'green',
+    borderRadius: 10,
+    // height:100,
+    paddingBottom: 0,
+
+    width: 150,
   },
-  modalView:{
-    margin:20,
-    backgroundColor:'pink',
-    padding:5,
-    borderRadius:20,
-    alignItems:'center',
+  modalView: {
+    margin: 20,
+    backgroundColor: 'pink',
+    padding: 5,
+    borderRadius: 20,
+    alignItems: 'center',
   },
-  button:{
-    borderRadius:20,
-    padding:10,
-    elevation:2,
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
   },
-  buttonOpen:{
-    backgroundColor:'yellow',
-    height:50,
-    width:180,
-    alignSelf:'center',
-    marginTop:150
+  buttonOpen: {
+    backgroundColor: 'yellow',
+    height: 50,
+    width: 180,
+    alignSelf: 'center',
+    marginTop: 150,
   },
-  butonClose:{
-    backgroundColor:'white',
+  butonClose: {
+    backgroundColor: 'white',
   },
 });

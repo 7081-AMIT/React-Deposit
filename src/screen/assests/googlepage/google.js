@@ -11,12 +11,14 @@ import {
   Dimensions,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from 'react-native';
 
 const {width, height} = Dimensions.get('window');
-const Google = () => {
+const Google = ({navigation}) => {
   return (
     <SafeAreaView>
+      <ScrollView>
       <View style={styles.maincontainer}>
         <Text
           style={{
@@ -77,10 +79,14 @@ const Google = () => {
             placeholderTextColor="#96ACB1"
             style={styles.input}></TextInput>
         </View>
-        <TouchableOpacity style={styles.btn4}>
+      
+
+
+        <TouchableOpacity style={styles.btn4} 
+        onPress ={() =>navigation.navigate("Customers") }>
+
           <Text
-            style={{fontWeight: 'bold', fontSize: 28, color: 'white'}}
-            onPress={() => Alert.alert('Successfuly Login')}>
+            style={{fontWeight: 'bold', fontSize: 28, color: 'white'}}>
             Next
           </Text>
         </TouchableOpacity>
@@ -89,8 +95,10 @@ const Google = () => {
             <Text style={{fontSize: 18, color: 'white'}}>
               Crete New Account.
             </Text>
-            <TouchableOpacity>
-              <Text
+            
+
+            <TouchableOpacity style={StyleSheet.Btn} onPress ={() =>navigation.navigate("") }>
+            <Text
                 style={{
                   textDecorationLine: 'underline',
                   color: 'white',
@@ -100,7 +108,15 @@ const Google = () => {
                 }}>
                 SignUp
               </Text>
+                
             </TouchableOpacity>
+
+
+
+
+
+              
+          
             <TouchableOpacity>
               <Text
                 style={{
@@ -123,6 +139,8 @@ const Google = () => {
         </TouchableOpacity>
         </View>
       </View>
+      </ScrollView>
+      
     </SafeAreaView>
   );
 };

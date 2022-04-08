@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 const {width, height} = Dimensions.get('window');
-const Facebook = () => {
+const Facebook = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -35,7 +35,7 @@ const Facebook = () => {
               style={styles.input1}></TextInput>
           </View>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress ={() =>navigation.navigate("F1") } >
               <Text style={styles.btn}>Login</Text>
             </TouchableOpacity>
           </View>

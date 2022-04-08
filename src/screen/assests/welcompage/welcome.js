@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const {width, height} = Dimensions.get('window');
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container1}>

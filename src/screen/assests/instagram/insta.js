@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 const {width, height} = Dimensions.get('window');
-const Insta = () => {
+const Insta = ({navigation}) => {
   return (
     // <SafeAreaView>
     <View>
@@ -79,7 +79,7 @@ const Insta = () => {
             <TouchableOpacity>
               <Text
                 style={styles.main}
-                onPress={() => Alert.alert('Successfuly Login')}>
+                onPress ={() =>navigation.navigate("Login3") }>
                 Login
               </Text>
             </TouchableOpacity>

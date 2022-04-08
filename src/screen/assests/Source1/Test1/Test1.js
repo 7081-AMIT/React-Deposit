@@ -8,7 +8,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-const Test11 = () => {
+const Test11 = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (

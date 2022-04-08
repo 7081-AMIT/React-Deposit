@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-const Login1 = () => {
+const Login1 = ({navigation}) => {
   return (
       <SafeAreaView>
         <TouchableOpacity>
